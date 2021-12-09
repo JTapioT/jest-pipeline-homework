@@ -62,7 +62,7 @@ describe("Testing the app endpoints", () => {
 
     it("should return correct product with a valid id", async () => {
         const productsResponse = await request.get("/products");
-        const productId = productsResponse.body[0]._id
+        const productId:string = productsResponse.body[0]._id
         const response = await request.get(`/products/${productId}`);
 
         expect(response.status).toBe(200);
