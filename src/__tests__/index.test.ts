@@ -1,5 +1,5 @@
 
-import { app } from '../app.js';
+import { app } from '../app';
 import supertest from "supertest"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
@@ -18,7 +18,7 @@ describe("Testing the app endpoints", () => {
 
     beforeAll(done => {
         console.log("This gets run before all tests in this suite")
-        mongoose.connect(process.env.MONGO_URL_TEST).then(() => {
+        mongoose.connect(process.env.MONGO_URL_TEST!).then(() => {
             console.log("Connected to the test database")
             done();
         })

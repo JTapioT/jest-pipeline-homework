@@ -1,5 +1,5 @@
 import express from "express"
-import { ProductModel } from "./model.js"
+import ProductModel from "./model"
 
 const productsRouter = express.Router()
 
@@ -20,7 +20,7 @@ productsRouter
                 res.send(product)
             }
         } catch (error) {
-            //console.log(error);
+            console.log(error);
             res.status(404).send();
         }
     })
@@ -47,7 +47,7 @@ productsRouter
                 res.status(204).send();
             } 
         } catch (error) {
-            //console.log(error);
+            console.log(error);
             res.status(404).send();
         }
     })
